@@ -1,0 +1,58 @@
+.loaded,
+.error,
+.empty {
+  display: none;
+}
+
+.empty,
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+}
+
+.error span {
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 25px 0px;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clickable:hover {
+  background-color: rgba(223, 223, 223, 0.185);
+}
+
+.loading {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.anime-img {
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.action-btn {
+  margin: 20px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
