@@ -139,5 +139,5 @@ function hideButtons(hide) {
 
 function changePage(page) {
   currentPage = page;
-  title.innerHTML = page == Pages.search ? "Search Results" : "Top Animes";
+  title.innerHTML = page == Pages.search ? "Resultados de búsqueda" : "Top Animes";
 }
