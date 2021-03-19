@@ -38,7 +38,49 @@ h1 {
 }
 
 .table td {
+  
   vertical-align: middle;
+}
+
+.score{
+  display: flex;
+  align-items: flex-end;
+}
+.score i{
+  color: rgb(224, 192, 48);
+  margin-right: 10px;
+}
+
+#anime-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+#anime-title{
+  font-size: 18px;
+  font-weight: 600;
+
+}
+
+.badge-warning{
+  background-color: rgb(224, 192, 48);
+  color: white;
+}
+
+.list-item {
+  display: flex;
+
+  margin-top: 30px;
+  align-items: center;
+}
+
+.list-item span {
+  margin-left: 20px;
+}
+
+.list-item span:last-child{
+  margin-left: auto;
 }
 
 .anime-img {

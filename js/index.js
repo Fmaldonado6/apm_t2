@@ -27,6 +27,7 @@ let error;
 let empty;
 
 window.onload = () => {
+  MicroModal.init();
   buttonContainer = document.querySelector(".btn-container");
   loading = document.querySelector(".loading");
   empty = document.querySelector(".empty");
@@ -36,7 +37,7 @@ window.onload = () => {
   searchBox = document.getElementById("search-box");
   title = document.getElementById("title");
   tableBody = document.getElementById("tableBody");
-  
+
   getTopAnimes(currentSearchPage);
 };
 
@@ -86,11 +87,43 @@ function insertElements(animes) {
     const imageCell = row.insertCell(0);
     const titleCell = row.insertCell(1);
     const rankCell = row.insertCell(2);
-
+    row.onclick = () => {
+      openModal(anime);
+    };
     imageCell.innerHTML = `<img class="anime-img" src="${anime.image_url}"/>`;
     titleCell.innerHTML = anime.title;
-    rankCell.innerHTML = anime.score;
+    rankCell.innerHTML = `<span class="score"><i class="material-icons">star_rate</i>${anime.score}</span>`;
   }
+}
+
+function openModal(anime) {
+  const img = document.getElementById("anime-img");
+  const animeTitle = document.getElementById("anime-title");
+  const startDate = document.getElementById("startDate");
+  const endDate = document.getElementById("endDate");
+  const score = document.getElementById("score");
+  const episodes = document.getElementById("episodes");
+
+  animeTitle.innerHTML = anime.title;
+  img.src = anime.image_url;
+  startDate.innerHTML = getRealDate(anime.start_date);
+  endDate.innerHTML = anime.end_date
+    ? getRealDate(anime.end_date)
+    : "En emisión";
+
+  score.innerHTML = anime.score;
+  episodes.innerHTML = anime.episodes;
+
+  MicroModal.show("modal");
+}
+
+function getRealDate(date) {
+  const options = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  };
+  return new Date(date).toLocaleDateString("es-Es", options);
 }
 
 function changeStatus(status) {

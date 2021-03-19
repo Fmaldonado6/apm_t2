@@ -11,7 +11,11 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+
   </head>
   <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -84,7 +88,43 @@
       </div>
     </div>
 
-    <script src="js/index.js"></script>
+    <div class="modal micromodal-slide" id="modal" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+          <header class="modal__header">
+            <img id="anime-img">
+          </header>
+          <main class="modal__content" id="modal-1-content">
+            <p id="anime-title"></p>
+            
+            <p class="list-item">
+              <i class="material-icons">star_rate</i>
+              <span>Calificación:</span> 
+              <span id="score" class="badge badge-pill badge-warning">23</span>
+            </p>
+            <p class="list-item">
+              <i class="material-icons">tv</i>
+              <span>Episodios:</span> 
+              <span id="episodes" class="badge badge-pill badge-danger">23</span>
+            </p>
+            <p class="list-item">
+              <i class="material-icons">today</i>
+              <span>Fecha de inicio:</span> 
+              <span id="startDate" class="badge badge-pill badge-primary">23</span>
+            </p>
+            <p class="list-item">
+              <i class="material-icons">event</i>
+              <span>Fecha de fin:</span> 
+              <span id="endDate" class="badge badge-pill badge-info">23</span>
+            </p>
+         
+          </main>
+          
+        </div>
+      </div>
+    </div>
 
+    <script src="js/index.js"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
   </body>
 </html>
